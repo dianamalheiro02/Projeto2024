@@ -11,3 +11,4 @@
 3. Otemos o origin.json, recorrendo ao chatGPT e a indo buscar informação à mão.
 4. Calculos dos ratings já estão no populate.py, mas foram também obtidos à mão.
 5. Executar populate.py, o que resulta na output2.ttl.
+6. Colocar no sparql, no repositório "supernatural2".
