@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Season {{ season_number }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <h1>Season {{ season_number }}</h1>
+        <div class="nav-menu">
+            <a href="/">Home</a>
+            <a href="/monsters">Monsters</a>
+            <a href="/seasons">Seasons</a>
+            <a href="/strengths">Strengths</a>
+            <a href="/weaknesses">Weaknesses</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Total Monsters: {{ total_monsters }}</h2>
+            <h2>Monsters</h2>
+            <ul>
+                {% for monster in monsters %}
+                <li><a href="/monster/{{ monster.uri }}" class="monster-link">{{ monster.name }}</a></li>
+                {% endfor %}
+            </ul>
+            <h3>Top 5 Strengths:</h3>
+            <ul>
+                {% for strength, count in common_strengths %}
+                <li>{{ strength }} ({{ count }})</li>
+                {% endfor %}
+            </ul>
+            <h3>Top 5 Weaknesses:</h3>
+            <ul>
+                {% for weakness, count in common_weaknesses %}
+                <li>{{ weakness }} ({{ count }})</li>
+                {% endfor %}
+            </ul>
+            <h3>Most Common Origin:</h3>
+            <p>{{ most_common_origin }}</p>
+
+            <h3>Most Common Killing Method:</h3>
+            <p>{{ most_common_killing }}</p>
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; RPCW 2024</p>
+    </footer>
+</body>
+</html>

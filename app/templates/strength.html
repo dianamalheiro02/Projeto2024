@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <h1>{{ name }}</h1>
+        <div class="nav-menu">
+            <a href="/">Home</a>
+            <a href="/monsters">Monsters</a>
+            <a href="/seasons">Seasons</a>
+            <a href="/strengths">Strengths</a>
+            <a href="/weaknesses">Weaknesses</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>Monsters with {{ name }}</h2>
+            <ul class="monster-list">
+                {% for monster in monsters %}
+                <li><a href="/monster/{{ monster['uri'] }}">{{ monster['name'] }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="/strengths">Back to Strengths</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; RPCW 2024</p>
+    </footer>
+</body>
+</html>

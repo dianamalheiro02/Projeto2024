@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weaknesses</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <h1>Weaknesses</h1>
+        <div class="nav-menu">
+            <a href="/">Home</a>
+            <a href="/monsters">Monsters</a>
+            <a href="/seasons">Seasons</a>
+            <a href="/strengths">Strengths</a>
+            <a href="/weaknesses" class="current">Weaknesses</a>
+        </div>
+    </header>
+    <div class="container">
+        <ul class="weakness-list">
+            {% for weakness in weaknesses %}
+            <li><a href="/weakness/{{ weakness['uri'] }}">{{ weakness['name'] }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; RPCW 2024</p>
+    </footer>
+</body>
+</html>
